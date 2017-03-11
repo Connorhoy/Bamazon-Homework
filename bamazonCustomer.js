@@ -83,6 +83,8 @@ setTimeout(function(){
 
 									}],function(err,res){
 									});
+
+
 									// UI to show that the process has been completed
 									console.log("Your order has been placed!")
 								}, 500);
@@ -102,19 +104,26 @@ setTimeout(function(){
 								// Ends connection to database
 								connection.end();
 							// If requested amount is not in stock, will cancel order
-							}else {
-								console.log("Sorry, we do not have that item in the quantity that you ordered. Please try again.")
-							}
-						})
+						}
+
+						else {
+							console.log("Sorry, we do not have that item in the quantity that you ordered. Please try again.")
+						}
+					})
 					})
 				// If user places incorrect order
-				}else{
-					console.log("Thank you for visiting Bamazon.")
-					connection.end();
-				}
-			})
-		}, 500);
+			}
+
+			else{
+				console.log("Thank you for visiting Bamazon.")
+				connection.end();
+			}
 		})
+
+		}, 500);
+
+		})
+
 }, 1000);
 
 
